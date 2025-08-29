@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake • Water • Gun</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>Snake • Water • Gun</h1>
+            <p>Simple rules, endless fun! Snake drinks Water, Water drowns Gun, Gun kills Snake. Same choice means a draw. Pick a mode, choose rounds, and let the best player win!</p>
+        </div>
+
+        <div class="game-panel">
+            <div class="mode-selector">
+                <button class="pill-button active" data-mode="computer">🤖 Vs Computer</button>
+                <button class="pill-button" data-mode="friend">👥 Vs Friend</button>
+            </div>
+
+            <div class="round-selector">
+                <button class="pill-button" data-rounds="1">1 round</button>
+                <button class="pill-button active" data-rounds="3">3 rounds</button>
+                <button class="pill-button" data-rounds="5">5 rounds</button>
+            </div>
+
+            <button class="reset-button" onclick="resetGame()">Reset</button>
+
+            <div class="scoreboard">
+                <h2>Scoreboard</h2>
+                <div class="scores">
+                    <div class="score-item">
+                        <div class="score-label">You</div>
+                        <div class="score-value" id="player-score">0</div>
+                    </div>
+                    <div class="score-item">
+                        <div class="score-label" id="opponent-label">Computer</div>
+                        <div class="score-value" id="opponent-score">0</div>
+                    </div>
+                </div>
+                <div class="round-info">
+                    Round <span id="current-round">0</span> / <span id="total-rounds">3</span>
+                </div>
+            </div>
+
+            <div class="choose-move">
+                <h3>Choose your move!</h3>
+                <div class="move-buttons">
+                    <button class="move-button" onclick="playerMove('snake')">🐍</button>
+                    <button class="move-button" onclick="playerMove('water')">💧</button>
+                    <button class="move-button" onclick="playerMove('gun')">🔫</button>
+                </div>
+            </div>
+
+            <div id="result-banner" class="result-banner hidden">
+                <h3 id="result-text"></h3>
+                <div class="result-moves" id="result-moves"></div>
+                <button class="next-button" id="next-button" onclick="nextRound()">Next round</button>
+            </div>
+
+            <div id="final-banner" class="final-banner hidden">
+                <h2 id="final-text"></h2>
+                <button class="play-again-button" onclick="resetGame()">Play Again</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>How to Play</h3>
+            <ul>
+                <li>Choose a game mode: Vs Computer or Vs Friend.</li>
+                <li>Select how many rounds to play (1, 3, or 5).</li>
+                <li>Tap a button to pick Snake 🐍, Water 💧, or Gun 🔫.</li>
+                <li>See the round result and watch the scoreboard update.</li>
+                <li>After all rounds, check the final winner and play again!</li>
+            </ul>
+        </div>
+
+        <div class="footer-text">
+            Have fun and play fair! ✨
+        </div>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
